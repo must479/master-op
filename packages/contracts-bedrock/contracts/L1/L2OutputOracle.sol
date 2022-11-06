@@ -78,16 +78,12 @@ contract L2OutputOracle is Initializable, Semver {
      *
      * @param _submissionInterval    Interval in blocks at which checkpoints must be submitted.
      * @param _l2BlockTime           The time per L2 block, in seconds.
-     * @param _startingBlockNumber   The number of the first L2 block.
-     * @param _startingTimestamp     The timestamp of the first L2 block.
      * @param _proposer              The address of the proposer.
      * @param _challenger            The address of the challenger.
      */
     constructor(
         uint256 _submissionInterval,
         uint256 _l2BlockTime,
-        uint256 _startingBlockNumber,
-        uint256 _startingTimestamp,
         address _proposer,
         address _challenger
     ) Semver(0, 0, 1) {
@@ -95,8 +91,6 @@ contract L2OutputOracle is Initializable, Semver {
         L2_BLOCK_TIME = _l2BlockTime;
         PROPOSER = _proposer;
         CHALLENGER = _challenger;
-
-        initialize(_startingBlockNumber, _startingTimestamp);
     }
 
     /**

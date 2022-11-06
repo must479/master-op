@@ -2,6 +2,38 @@
 # yarn lockfile v1
 
 
+"@amplitude/identify@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@amplitude/identify/-/identify-1.10.2.tgz#25d88f9e3bedd99701c777b9e44408ac69179aa1"
+  integrity sha512-ywxeabS8ukMdJWNwx3rG/EBngXFg/4NsPhlyAxbBUcI7HzBXEJUKepiZfkz8K6Y7f0mpc23Qz1aBf48ZJDZmkQ==
+  dependencies:
+    "@amplitude/types" "^1.10.2"
+    "@amplitude/utils" "^1.10.2"
+    tslib "^2.0.0"
+
+"@amplitude/node@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@amplitude/node/-/node-1.10.2.tgz#79fb80e7228486521156eae510de998264e6620c"
+  integrity sha512-E3xp8DOpkF5ThjrRlAmSocnrEYsTPpd3Zg4WdBLms0ackQSgQpw6z84+YMcoPerZHJJ/LEqdo4Cg4Z5Za3D+3Q==
+  dependencies:
+    "@amplitude/identify" "^1.10.2"
+    "@amplitude/types" "^1.10.2"
+    "@amplitude/utils" "^1.10.2"
+    tslib "^2.0.0"
+
+"@amplitude/types@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@amplitude/types/-/types-1.10.2.tgz#8f3c6c3c9ee24f401ee037b351c3c67eb945eefc"
+  integrity sha512-I8qenRI7uU6wKNb9LiZrAosSHVoNHziXouKY81CrqxH9xhVTEIJFXeuCV0hbtBr0Al/8ejnGjQRx+S2SvU/pPg==
+
+"@amplitude/utils@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@amplitude/utils/-/utils-1.10.2.tgz#ce77dc8a54fcd3843511531cc7d56363247c7ad8"
+  integrity sha512-tVsHXu61jITEtRjB7NugQ5cVDd4QDzne8T3ifmZye7TiJeUfVRvqe44gDtf55A+7VqhDhyEIIXTA1iVcDGqlEw==
+  dependencies:
+    "@amplitude/types" "^1.10.2"
+    tslib "^2.0.0"
+
 "@assemblyscript/loader@^0.9.4":
   version "0.9.4"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.9.4.tgz#a483c54c1253656bb33babd464e3154a173e1577"
@@ -513,44 +545,54 @@
     human-id "^1.0.2"
     prettier "^1.19.1"
 
-"@chugsplash/contracts@^0.3.5":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@chugsplash/contracts/-/contracts-0.3.6.tgz#f4477ae20096121b192cb54a3a0f2d1be84dadb3"
-  integrity sha512-RYHigOAVDvIi+USsDEsAXzAP5Qw9JMcj8hI5O6arnhcYGYgLLlxC5rqHeXUz5sAUO3q7Zt2bvwbLNVMsS0eh1w==
+"@chugsplash/contracts@^0.3.10":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@chugsplash/contracts/-/contracts-0.3.10.tgz#10d4a27bcbd7d33fcce0890e9c623746dcf3d0c1"
+  integrity sha512-AqEg4ms8vpeYG7KOg99fZTvVNe4WkyI3euwjr+aMfLu+l8CjXBasSTWB8sc0Xw3bztXtL2flw+GVWS4xll7fUQ==
 
-"@chugsplash/core@0.3.6", "@chugsplash/core@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@chugsplash/core/-/core-0.3.6.tgz#050788edc3ef11969d7d8d642c843eb7ceef025e"
-  integrity sha512-2XdT2RlD+dO4RNSd0arugVGDYxS4AccLOro75OKn0TGjL3VUxSP1pGLwf48RYp96PGU/D6OxMU7MDNRan1uzFg==
+"@chugsplash/core@^0.3.16":
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/@chugsplash/core/-/core-0.3.16.tgz#8ed010369a52d7bda3128daed8cf112eccc57869"
+  integrity sha512-fdR2bQHcrfr2VKByVYDFzb8Q0nJ7xQiIqUsmQU8yB17R80v7/cKBg2OSkFn4FK0RI3M5RVFQTppJp8/C/8BPDw==
   dependencies:
-    "@chugsplash/contracts" "^0.3.5"
+    "@chugsplash/contracts" "^0.3.10"
     "@eth-optimism/contracts-bedrock" "^0.8.0"
     "@eth-optimism/core-utils" "^0.9.1"
+    "@ethersproject/abstract-provider" "^5.7.0"
     ethers "^5.6.9"
     handlebars "^4.7.7"
     hardhat-deploy "^0.11.18"
+    ipfs-http-client "56.0.3"
     merkletreejs "^0.2.18"
 
-"@chugsplash/plugins@0.5.5":
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/@chugsplash/plugins/-/plugins-0.5.5.tgz#80842162098f987ddb03bf42d166ea1cc614b2cc"
-  integrity sha512-42KygI2JZNA7cwSTNbgb96kV9s13HbqZ6lqEIEL4IkGQFUX/PLgN25Q/3BDaRZM3FSKuX6pXlK+piUwVqdNolQ==
+"@chugsplash/executor@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@chugsplash/executor/-/executor-0.4.7.tgz#5480a6514db5c7ae7ef4be54554f8a9768708558"
+  integrity sha512-i3y9YVrIGLuHs9LRuiiFGTTSl90LvsGuoQHl2XnC0tL6oibYCitQd6r6Pfs75YiRv2wPj9jmDDvq79NNfBpxAQ==
   dependencies:
-    "@chugsplash/contracts" "^0.3.5"
-    "@chugsplash/core" "^0.3.6"
+    "@amplitude/node" "^1.10.2"
+    "@chugsplash/core" "^0.3.16"
+    hardhat "^2.10.0"
+
+"@chugsplash/plugins@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@chugsplash/plugins/-/plugins-0.8.0.tgz#80e372f988edf5bba328ba29405d840f61a9f032"
+  integrity sha512-rJGRSBetDX1VaOAXLXpJxQ7y17rDwDri80eKPEuArcvXmBuaAahELYSBt/YEdmLCNvYqJvDWNaCxb28hcSsTUA==
+  dependencies:
+    "@chugsplash/contracts" "^0.3.10"
+    "@chugsplash/core" "^0.3.16"
+    "@chugsplash/executor" "^0.4.7"
     "@eth-optimism/core-utils" "^0.9.1"
     "@ethereumjs/common" "^3.0.1"
     "@ethereumjs/vm" "^6.2.0"
-    "@nomiclabs/hardhat-ethers" "^2.2.1"
-    cli-progress "^3.11.2"
     dotenv "^16.0.3"
     ethers "^5.6.9"
-    hardhat "^2.10.0"
     ipfs-http-client "56.0.3"
     ipfs-only-hash "^4.0.0"
     node-fetch "^2.6.7"
     ora "^5.4.1"
     semver "^7.3.7"
+    yesno "^0.4.0"
 
 "@codechecks/client@^0.1.11":
   version "0.1.11"
@@ -3460,11 +3502,6 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@nomiclabs/hardhat-ethers/-/hardhat-ethers-2.0.2.tgz#c472abcba0c5185aaa4ad4070146e95213c68511"
   integrity sha512-6quxWe8wwS4X5v3Au8q1jOvXYEPkS1Fh+cME5u6AwNdnI4uERvPlVjlgRWzpnb+Rrt1l/cEqiNRH9GlsBMSDQg==
-
-"@nomiclabs/hardhat-ethers@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@nomiclabs/hardhat-ethers/-/hardhat-ethers-2.2.1.tgz#8057b43566a0e41abeb8142064a3c0d3f23dca86"
-  integrity sha512-RHWYwnxryWR8hzRmU4Jm/q4gzvXpetUOJ4OPlwH2YARcDB+j79+yAYCwO0lN1SUOb4++oOTJEe6AWLEc42LIvg==
 
 "@nomiclabs/hardhat-etherscan@^3.0.1":
   version "3.0.4"
@@ -7021,13 +7058,6 @@ cli-cursor@^3.1.0:
   integrity sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==
   dependencies:
     restore-cursor "^3.1.0"
-
-cli-progress@^3.11.2:
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/cli-progress/-/cli-progress-3.11.2.tgz#f8c89bd157e74f3f2c43bcfb3505670b4d48fc77"
-  integrity sha512-lCPoS6ncgX4+rJu5bS3F/iCz17kZ9MPZ6dpuTtI0KXKABkhyXIdYB3Inby1OpaGti3YlI3EeEkM9AuWpelJrVA==
-  dependencies:
-    string-width "^4.2.3"
 
 cli-spinners@^2.5.0:
   version "2.7.0"
@@ -10949,9 +10979,9 @@ hardhat-watcher@^2.1.1:
     chokidar "^3.4.3"
 
 hardhat@^2.10.0:
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/hardhat/-/hardhat-2.12.2.tgz#6ae985007b20c1f381c6573799d66c1438c4c802"
-  integrity sha512-f3ZhzXy1uyQv0UXnAQ8GCBOWjzv++WJNb7bnm10SsyC3dB7vlPpsMWBNhq7aoRxKrNhX9tCev81KFV3i5BTeMQ==
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/hardhat/-/hardhat-2.12.3.tgz#1824c5d5e2bcc61601bee429053ccecb4dbc0adb"
+  integrity sha512-qxOvRNgQnLqRFssn5f8VP5KN3caytShU0HNeKxmPVK1Ix/0xDVhIC7JOLxG69DjOihUfmxmjqspsHbZvFj6EhQ==
   dependencies:
     "@ethersproject/abi" "^5.1.2"
     "@metamask/eth-sig-util" "^4.0.0"
@@ -12957,7 +12987,7 @@ level-ws@^2.0.0:
     readable-stream "^3.1.0"
     xtend "^4.0.1"
 
-level@^6.0.1:
+"level6@npm:level@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/level/-/level-6.0.1.tgz#dc34c5edb81846a6de5079eac15706334b0d7cd6"
   integrity sha512-psRSqJZCsC/irNhfHzrVZbmPYXDcEYhA5TVNwr+V92jF44rbf86hqGp8fiT702FyiArScYIlPSBTDUASCVNSpw==
@@ -18885,6 +18915,11 @@ tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
+tslib@^2.0.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
+  integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
+
 tslib@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
@@ -19187,9 +19222,9 @@ undici@^4.14.1:
   integrity sha512-kHppwh/y49FLEXl/zYCCbGB0D3nrcWNBczNYCsDdNYzWPs80aQgfKic1PVkJEIc2YlR7m0Lf5i559zbr0AA7FQ==
 
 undici@^5.4.0:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-5.12.0.tgz#c758ffa704fbcd40d506e4948860ccaf4099f531"
-  integrity sha512-zMLamCG62PGjd9HHMpo05bSLvvwWOZgGeiWlN/vlqu3+lRo3elxktVGEyLMX+IO7c2eflLjcW74AlkhEZm15mg==
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.13.0.tgz#56772fba89d8b25e39bddc8c26a438bd73ea69bb"
+  integrity sha512-UDZKtwb2k7KRsK4SdXWG7ErXiL7yTGgLWvk2AXO1JMjgjh404nFo6tWSCM2xMpJwMPx3J8i/vfqEh1zOqvj82Q==
   dependencies:
     busboy "^1.6.0"
 
@@ -20546,6 +20581,11 @@ yargs@^4.7.1:
     window-size "^0.2.0"
     y18n "^3.2.1"
     yargs-parser "^2.4.1"
+
+yesno@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/yesno/-/yesno-0.4.0.tgz#5d674f14d339f0bd4b0edc47f899612c74fcd895"
+  integrity sha512-tdBxmHvbXPBKYIg81bMCB7bVeDmHkRzk5rVJyYYXurwKkHq/MCd8rz4HSJUP7hW0H2NlXiq8IFiWvYKEHhlotA==
 
 yn@3.1.1:
   version "3.1.1"

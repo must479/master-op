@@ -68,23 +68,7 @@ contract SystemConfig is OwnableUpgradeable, Semver {
      */
     event ConfigUpdate(uint256 indexed version, UpdateType indexed updateType, bytes data);
 
-    /**
-     * @custom:semver 0.0.1
-     *
-     * @param _owner       Initial owner of the contract.
-     * @param _overhead    Initial overhead value.
-     * @param _scalar      Initial scalar value.
-     * @param _batcherHash Initial batcher hash.
-     * @param _gasLimit    Initial gas limit.
-     */
-    constructor(
-        address _owner,
-        uint256 _overhead,
-        uint256 _scalar,
-        bytes32 _batcherHash,
-        uint64 _gasLimit
-    ) Semver(0, 0, 1) {
-        initialize(_owner, _overhead, _scalar, _batcherHash, _gasLimit);
+    constructor() Semver(0, 0, 1) {
     }
 
     /**
