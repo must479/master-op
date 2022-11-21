@@ -51,6 +51,19 @@ contract Optimist is
     }
 
     /**
+     * @notice Returns the URI for the token metadata.
+     * @dev The token URI will be stored at baseURI + '/' + tokenId + .json
+     * @param tokenId The token ID to query.
+     * @return The URI for the given token ID.
+     */
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        if (ownerOf(tokenId) == address(0)) {
+            revert("Optimist:::tokenURI: TOKEN_URI_DNE");
+        }
+        return string(abi.encodePacked(baseURI(), "/", Strings.toHexString(tokenId), ".json"));
+    }
+
+    /**
      * @notice  (Internal) Optimist Token Base URI.
      * @dev     Returns the base URI for the Optimist token from the attestation.
      * @return  string  The token URI.
@@ -58,10 +71,8 @@ contract Optimist is
     function _baseURI() internal view override returns (string memory) {
         return
             string(
-                attestationStation.attestations(
-                    admin,
-                    address(this),
-                    keccak256("opnft.optimistNftBaseURI")
+                abi.encodePacked(
+                    sc.attestations(admin, address(this), bytes32("opnft.optimistNftBaseURI"))
                 )
             );
     }
