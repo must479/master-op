@@ -146,6 +146,10 @@ github.com/ethereum-optimism/op-geth v0.0.0-20221028165624-03aeaf2c39a5 h1:b0ySU
 github.com/ethereum-optimism/op-geth v0.0.0-20221028165624-03aeaf2c39a5/go.mod h1:/6CsT5Ceen2WPLI/oCA3xMcZ5sWMF/D46SjM/ayY0Oo=
 github.com/ethereum-optimism/op-geth v0.0.0-20221104125741-d6c1bb9a110d h1:rDRvYVDftip53l1igBiLa3+CLPmIH2r0of2GTArMC60=
 github.com/ethereum-optimism/op-geth v0.0.0-20221104125741-d6c1bb9a110d/go.mod h1:/6CsT5Ceen2WPLI/oCA3xMcZ5sWMF/D46SjM/ayY0Oo=
+github.com/ethereum-optimism/op-geth v0.0.0-20221122174503-98b5859ea7d0 h1:RprYRAZGws6Yi7VMxjkScsQLM+mmX4OsPKpKobxn8KQ=
+github.com/ethereum-optimism/op-geth v0.0.0-20221122174503-98b5859ea7d0/go.mod h1:1g9UmZgEINqvYfXmWOUCRJX9fxegeOHudVkLCRAXO5Y=
+github.com/ethereum-optimism/op-geth v0.0.0-20221122175607-4146e944f28f h1:1QeFemKYReLmIknFM2b1Jg9sg1kTI4oVJz4UwgZjqoA=
+github.com/ethereum-optimism/op-geth v0.0.0-20221122175607-4146e944f28f/go.mod h1:1g9UmZgEINqvYfXmWOUCRJX9fxegeOHudVkLCRAXO5Y=
 github.com/evanphx/json-patch v4.9.0+incompatible h1:kLcOMZeuLAJvL2BPWLMIj5oaZQobrkAqrL+WFZwQses=
 github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072 h1:DddqAaWDpywytcG8w/qoQ5sAN8X12d3Z3koB0C3Rxsc=
 github.com/fatih/structs v1.1.0 h1:Q7juDM0QtcnhCpeyLGQKyg4TOIghuNXrkL32pHAUMxo=
@@ -424,8 +428,6 @@ github.com/shurcooL/reactions v0.0.0-20181006231557-f2e0b4ca5b82 h1:LneqU9PHDsg/
 github.com/shurcooL/sanitized_anchor_name v1.0.0 h1:PdmoCO6wvbs+7yrJyMORt4/BmY5IYyJwS/kOiWx8mHo=
 github.com/shurcooL/users v0.0.0-20180125191416-49c67e49c537 h1:YGaxtkYjb8mnTvtufv2LKLwCQu2/C7qFB7UtrOlTWOY=
 github.com/shurcooL/webdavfs v0.0.0-20170829043945-18c3829fa133 h1:JtcyT0rk/9PKOdnKQzuDR+FSjh7SGtJwpgVpfZBRKlQ=
-github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=
-github.com/sirupsen/logrus v1.8.1/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
 github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d h1:zE9ykElWQ6/NYmHa3jpm/yHnI4xSofP+UP6SpjHcSeM=
 github.com/smartystreets/goconvey v1.6.4 h1:fv0U8FUIMPNf1L9lnHLvLhgicrIVChEkdzIKYqbNC9s=
 github.com/smola/gocompat v0.2.0 h1:6b1oIMlUXIpz//VKEDzPVBK8KG7beVwmHIUEBIs/Pns=
