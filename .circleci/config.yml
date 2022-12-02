@@ -291,6 +291,7 @@ jobs:
   bedrock-echidna-run:
     docker:
     - image: ethereumoptimism/ci-builder:latest
+    resource_class: xlarge
     parameters:
       echidna_target:
         description: Which echidna fuzz contract to run
