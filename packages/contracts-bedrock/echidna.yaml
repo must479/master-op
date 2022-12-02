@@ -1,0 +1,3 @@
+cryticArgs: ["--hardhat-ignore-compile"]
+format: text
+timeout: 480 # 8 minutes. The tool also adds 2 or 3 minutes before/after the actual timeout window.
