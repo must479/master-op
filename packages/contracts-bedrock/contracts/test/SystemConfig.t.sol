@@ -4,7 +4,6 @@ pragma solidity 0.8.15;
 import { CommonTest } from "./CommonTest.t.sol";
 import { SystemConfig } from "../L1/SystemConfig.sol";
 
-
 contract SystemConfig_Init is CommonTest {
     SystemConfig sysConf;
 
@@ -40,7 +39,7 @@ contract SystemConfig_Setters_TestFail is SystemConfig_Init {
 
     function test_setGasConfig_notOwner_reverts() external {
         vm.expectRevert("Ownable: caller is not the owner");
-        sysConf.setGasConfig(0,0);
+        sysConf.setGasConfig(0, 0);
     }
 
     function test_setGasLimit_notOwner_reverts() external {
@@ -50,14 +49,24 @@ contract SystemConfig_Setters_TestFail is SystemConfig_Init {
 }
 
 contract SystemConfig_Setters_Test is SystemConfig_Init {
-    event ConfigUpdate(uint256 indexed version, SystemConfig.UpdateType indexed updateType, bytes data);
+    event ConfigUpdate(
+        uint256 indexed version,
+        SystemConfig.UpdateType indexed updateType,
+        bytes data
+    );
 
     function test_setBatcherHash_succeeds() external {
         bytes32 newBatcherHash = bytes32(hex"1234");
 
-        vm.expectEmit(true,true,true,true);
+        vm.expectEmit(true, true, true, true);
         emit ConfigUpdate(0, SystemConfig.UpdateType.BATCHER, abi.encode(newBatcherHash));
 
+        vm.prank(alice);
+        sysConf.setBatcherHash(newBatcherHash);
+        assertEq(sysConf.batcherHash(), newBatcherHash);
+    }
+
+    function testFuzz_setBatcherHash_succeeds(bytes32 newBatcherHash) external {
         vm.prank(alice);
         sysConf.setBatcherHash(newBatcherHash);
         assertEq(sysConf.batcherHash(), newBatcherHash);
@@ -67,9 +76,18 @@ contract SystemConfig_Setters_Test is SystemConfig_Init {
         uint256 newOverhead = 1234;
         uint256 newScalar = 5678;
 
-        vm.expectEmit(true,true,true,true);
-        emit ConfigUpdate(0, SystemConfig.UpdateType.GAS_CONFIG, abi.encode(newOverhead, newScalar));
+        vm.expectEmit(true, true, true, true);
+        emit ConfigUpdate(
+            0,
+            SystemConfig.UpdateType.GAS_CONFIG,
+            abi.encode(newOverhead, newScalar)
+        );
 
+        vm.prank(alice);
+        sysConf.setGasConfig(newOverhead, newScalar);
+    }
+
+    function testFuzz_setGasConfig_succeeds(uint256 newOverhead, uint256 newScalar) external {
         vm.prank(alice);
         sysConf.setGasConfig(newOverhead, newScalar);
         assertEq(sysConf.overhead(), newOverhead);
@@ -79,9 +97,19 @@ contract SystemConfig_Setters_Test is SystemConfig_Init {
     function test_setGasLimit_succeeds() external {
         uint64 newGasLimit = 9_876_543;
 
-        vm.expectEmit(true,true,true,true);
+        vm.expectEmit(true, true, true, true);
         emit ConfigUpdate(0, SystemConfig.UpdateType.GAS_LIMIT, abi.encode(newGasLimit));
 
+        vm.prank(alice);
+        sysConf.setGasLimit(newGasLimit);
+        assertEq(sysConf.gasLimit(), newGasLimit);
+    }
+
+    function testFuzz_setGasLimit_succeeds(uint64 newGasLimit) external {
+        uint64 minimumGasLimit = sysConf.MINIMUM_GAS_LIMIT();
+        newGasLimit = uint64(
+            bound(uint256(newGasLimit), uint256(minimumGasLimit), uint256(type(uint64).max))
+        );
         vm.prank(alice);
         sysConf.setGasLimit(newGasLimit);
         assertEq(sysConf.gasLimit(), newGasLimit);
