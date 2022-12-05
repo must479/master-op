@@ -822,10 +822,11 @@ workflows:
           echidna_target: "burn:eth"
           requires:
             - bedrock-echidna-build
-      - bedrock-echidna-run:
-          echidna_target: "burn:gas"
-          requires:
-            - bedrock-echidna-build
+      # Disabled for now, this run consume too much memory
+      # - bedrock-echidna-run:
+      #     echidna_target: "burn:gas"
+      #     requires:
+      #       - bedrock-echidna-build
       - op-bindings-build:
           requires:
             - yarn-monorepo
