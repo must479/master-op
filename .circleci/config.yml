@@ -266,7 +266,7 @@ jobs:
   bedrock-echidna-build:
     docker:
       - image: ethereumoptimism/ci-builder:latest
-    resource_class: large
+    resource_class: 2xlarge
     steps:
       - checkout
       - attach_workspace: {at: "."}
