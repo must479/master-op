@@ -5,7 +5,7 @@ go 1.18
 replace github.com/ethereum-optimism/optimism/op-chain-ops v0.10.0 => ../op-chain-ops
 
 require (
-	github.com/docker/docker v20.10.21+incompatible
+	github.com/docker/docker v20.10.24+incompatible
 	github.com/docker/go-connections v0.4.0
 	github.com/ethereum-optimism/go-ethereum-hdwallet v0.1.3
 	github.com/ethereum-optimism/optimism/op-batcher v0.10.1
